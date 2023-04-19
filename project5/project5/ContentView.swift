@@ -20,6 +20,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var currentScore = 0
+    
     var body: some View {
         NavigationView {
             List {
@@ -45,6 +47,20 @@ struct ContentView: View {
             } message: {
                 Text(errorMessage)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Text("Score: \(currentScore)")
+                        .fontWeight(.semibold)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        startGame()
+                    } label: {
+                        Label("New game", systemImage: "doc.badge.plus")
+                    }
+                }
+            }
+            
         }
     }
     
@@ -68,13 +84,28 @@ struct ContentView: View {
             return
         }
         
+        guard !isTooShort(word: answer) else {
+            wordError(title: "Word is too short", message: "Must be longer than three letters")
+            return
+        }
+        
+        guard !isRootWord(word: answer) else {
+            wordError(title: "Word is root word", message: "You can't use the root word!")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        currentScore += answer.count + 1
         newWord = ""
     }
     
     func startGame() {
+        
+        usedWords.removeAll()
+        currentScore = 0
+        
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: ".txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
@@ -113,6 +144,14 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func isTooShort(word: String) -> Bool {
+        return word.count <= 3
+    }
+    
+    func isRootWord(word: String) -> Bool {
+        return word == rootWord
     }
 }
 
