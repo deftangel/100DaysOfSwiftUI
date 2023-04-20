@@ -19,6 +19,11 @@ struct ContentView: View {
     @State private var showingGameOver = false
     @State private var questionNumber = 1
     
+    @State private var flagIndexTapped = 0
+    @State private var rotationDegrees = 0.0
+    @State private var scaleFactor = 1.0
+    @State private var opacityFactor = 1.0
+    
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -49,6 +54,10 @@ struct ContentView: View {
                             self.flagTapped(number)
                         }) {
                             FlagImage(imageName: self.countries[number])
+                                .scaleEffect(flagIndexTapped == number ? 1.0 : scaleFactor)
+                                .opacity(flagIndexTapped == number ? 1.0 : opacityFactor)
+                                .rotation3DEffect(.degrees(flagIndexTapped == number ? rotationDegrees : 0), axis: (x: 0, y: 1, z: 0))
+
                         }
                     }
                 }
@@ -83,6 +92,9 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        
+        flagIndexTapped = number
+        
         if number == correctAnswer {
             score += 1
             scoreTitle = "Correct"
@@ -93,7 +105,16 @@ struct ContentView: View {
             scoreMessage = "That's the flag of \(countries[number])"
         }
         
-        showingScore = true
+        withAnimation {
+            rotationDegrees += 360
+            scaleFactor = 0.75
+            opacityFactor = 0.25
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            self.showingScore = true
+        }
+
     }
     
     func checkGameOver() {
@@ -112,6 +133,10 @@ struct ContentView: View {
     }
     
     func askQuestion() {
+        withAnimation {
+            scaleFactor = 1.0
+            opacityFactor = 1.0
+        }
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
