@@ -19,6 +19,7 @@
 		41C730B02A0EA0C800D30CCA /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C730AF2A0EA0C800D30CCA /* Color-Theme.swift */; };
 		41C730B22A0EA27A00D30CCA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C730B12A0EA27A00D30CCA /* MissionView.swift */; };
 		41C730B42A0EAAEA00D30CCA /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C730B32A0EAAEA00D30CCA /* AstronautView.swift */; };
+		41C730B62A103B6600D30CCA /* MissionTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C730B52A103B6600D30CCA /* MissionTeam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		41C730AF2A0EA0C800D30CCA /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		41C730B12A0EA27A00D30CCA /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		41C730B32A0EAAEA00D30CCA /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		41C730B52A103B6600D30CCA /* MissionTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTeam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				41C730B32A0EAAEA00D30CCA /* AstronautView.swift */,
 				41C730AF2A0EA0C800D30CCA /* Color-Theme.swift */,
 				41C730612A0AF67800D30CCA /* Mission.swift */,
+				41C730B52A103B6600D30CCA /* MissionTeam.swift */,
 				41185BDB29FDD032004D3880 /* Assets.xcassets */,
 				41185BDD29FDD032004D3880 /* Preview Content */,
 			);
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C730B62A103B6600D30CCA /* MissionTeam.swift in Sources */,
 				41C730B22A0EA27A00D30CCA /* MissionView.swift in Sources */,
 				41C7305E2A0AF55B00D30CCA /* Astronaut.swift in Sources */,
 				41C730B42A0EAAEA00D30CCA /* AstronautView.swift in Sources */,
