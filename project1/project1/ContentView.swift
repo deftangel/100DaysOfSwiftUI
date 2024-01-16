@@ -33,10 +33,10 @@ struct ContentView: View {
         return grandTotal
     }
     
-    let currencyFormatter = FloatingPointFormatStyle<Double>.Currency.currency(code: Locale.current.currencyCode ?? "USD")
+    let currencyFormatter = FloatingPointFormatStyle<Double>.Currency.currency(code: Locale.current.currency?.identifier ?? "USD")
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
                     TextField("Amount", value: $checkAmount, format: currencyFormatter)
@@ -50,18 +50,16 @@ struct ContentView: View {
                         }
                 }
                 
-                Section {
+                Section("How much tip do you want to leave?") {
                     Picker("Tip percentage", selection: $tipPercentage) {
                         ForEach(0 ..< 101) {
                             Text($0, format: .percent)
                         }
                     }
-                } header: {
-                    Text("How much tip do you want to leave?")
                 }
                 
                 Section(header:Text("Total with tip")) {
-                    Text("$\(grandTotal, specifier: "%.2f")")
+                    Text(grandTotal, format: currencyFormatter)
                         .foregroundColor(self.tipPercentage > 0 ? .blue : .red)
                 }
                 
@@ -75,7 +73,6 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    
                     Button("Done") {
                         amountIsFocused = false
                     }
@@ -85,8 +82,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
         ContentView()
-    }
 }
