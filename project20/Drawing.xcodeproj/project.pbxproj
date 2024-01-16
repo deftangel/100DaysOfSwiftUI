@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4193FA202A13D50A000D2F75 /* project9App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193FA1F2A13D50A000D2F75 /* project9App.swift */; };
+		4193FA202A13D50A000D2F75 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193FA1F2A13D50A000D2F75 /* DrawingApp.swift */; };
 		4193FA222A13D50A000D2F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193FA212A13D50A000D2F75 /* ContentView.swift */; };
 		4193FA242A13D50C000D2F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4193FA232A13D50C000D2F75 /* Assets.xcassets */; };
 		4193FA272A13D50C000D2F75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4193FA262A13D50C000D2F75 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4193FA1C2A13D50A000D2F75 /* project9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project9.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4193FA1F2A13D50A000D2F75 /* project9App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project9App.swift; sourceTree = "<group>"; };
+		4193FA1C2A13D50A000D2F75 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4193FA1F2A13D50A000D2F75 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
 		4193FA212A13D50A000D2F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4193FA232A13D50C000D2F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4193FA262A13D50C000D2F75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 		4193FA132A13D50A000D2F75 = {
 			isa = PBXGroup;
 			children = (
-				4193FA1E2A13D50A000D2F75 /* project9 */,
+				4193FA1E2A13D50A000D2F75 /* Drawing */,
 				4193FA1D2A13D50A000D2F75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,20 +43,20 @@
 		4193FA1D2A13D50A000D2F75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4193FA1C2A13D50A000D2F75 /* project9.app */,
+				4193FA1C2A13D50A000D2F75 /* Drawing.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4193FA1E2A13D50A000D2F75 /* project9 */ = {
+		4193FA1E2A13D50A000D2F75 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				4193FA1F2A13D50A000D2F75 /* project9App.swift */,
+				4193FA1F2A13D50A000D2F75 /* DrawingApp.swift */,
 				4193FA212A13D50A000D2F75 /* ContentView.swift */,
 				4193FA232A13D50C000D2F75 /* Assets.xcassets */,
 				4193FA252A13D50C000D2F75 /* Preview Content */,
 			);
-			path = project9;
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 		4193FA252A13D50C000D2F75 /* Preview Content */ = {
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4193FA1B2A13D50A000D2F75 /* project9 */ = {
+		4193FA1B2A13D50A000D2F75 /* Drawing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4193FA2A2A13D50C000D2F75 /* Build configuration list for PBXNativeTarget "project9" */;
+			buildConfigurationList = 4193FA2A2A13D50C000D2F75 /* Build configuration list for PBXNativeTarget "Drawing" */;
 			buildPhases = (
 				4193FA182A13D50A000D2F75 /* Sources */,
 				4193FA192A13D50A000D2F75 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = project9;
+			name = Drawing;
 			productName = project9;
-			productReference = 4193FA1C2A13D50A000D2F75 /* project9.app */;
+			productReference = 4193FA1C2A13D50A000D2F75 /* Drawing.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4193FA172A13D50A000D2F75 /* Build configuration list for PBXProject "project9" */;
+			buildConfigurationList = 4193FA172A13D50A000D2F75 /* Build configuration list for PBXProject "Drawing" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4193FA1B2A13D50A000D2F75 /* project9 */,
+				4193FA1B2A13D50A000D2F75 /* Drawing */,
 			);
 		};
 /* End PBXProject section */
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4193FA222A13D50A000D2F75 /* ContentView.swift in Sources */,
-				4193FA202A13D50A000D2F75 /* project9App.swift in Sources */,
+				4193FA202A13D50A000D2F75 /* DrawingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +266,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"project9/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,7 +294,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"project9/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -318,7 +318,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4193FA172A13D50A000D2F75 /* Build configuration list for PBXProject "project9" */ = {
+		4193FA172A13D50A000D2F75 /* Build configuration list for PBXProject "Drawing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4193FA282A13D50C000D2F75 /* Debug */,
@@ -327,7 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4193FA2A2A13D50C000D2F75 /* Build configuration list for PBXNativeTarget "project9" */ = {
+		4193FA2A2A13D50C000D2F75 /* Build configuration list for PBXNativeTarget "Drawing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4193FA2B2A13D50C000D2F75 /* Debug */,
