@@ -14,8 +14,9 @@ struct ExpenseItem: Identifiable, Codable {
     let amount: Double
 }
 
-class Expenses: ObservableObject {
-    @Published var items = [ExpenseItem]() {
+@Observable
+class Expenses {
+    var items = [ExpenseItem]() {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
@@ -35,11 +36,11 @@ class Expenses: ObservableObject {
 }
 
 struct ContentView: View {
-    @StateObject var expenses = Expenses()
+    @State var expenses = Expenses()
     @State private var showingAddExpense = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(expenses.items) { item in
                     HStack {
@@ -74,8 +75,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

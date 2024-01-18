@@ -11,13 +11,15 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    @ObservedObject var expenses: Expenses
+    
+    var expenses: Expenses
+    
     @Environment(\.dismiss) var dismiss
 
     let types = ["Business", "Personal"]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 TextField("Name", text: $name)
 
@@ -42,8 +44,6 @@ struct AddView: View {
     }
 }
 
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddView(expenses: Expenses())
-    }
+#Preview {
+    AddView(expenses: Expenses())
 }
