@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41185BCA29FDC958004D3880 /* FormatStyle-LocalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41185BC929FDC958004D3880 /* FormatStyle-LocalCurrency.swift */; };
 		4198C26C29F819C200436212 /* project7App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4198C26B29F819C200436212 /* project7App.swift */; };
 		4198C26E29F819C200436212 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4198C26D29F819C200436212 /* ContentView.swift */; };
 		4198C27029F819C300436212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4198C26F29F819C300436212 /* Assets.xcassets */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41185BC929FDC958004D3880 /* FormatStyle-LocalCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle-LocalCurrency.swift"; sourceTree = "<group>"; };
 		4198C26829F819C200436212 /* project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4198C26B29F819C200436212 /* project7App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project7App.swift; sourceTree = "<group>"; };
 		4198C26D29F819C200436212 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 				4198C27929F8218500436212 /* AddView.swift */,
 				4198C26F29F819C300436212 /* Assets.xcassets */,
 				4198C27129F819C300436212 /* Preview Content */,
-				41185BC929FDC958004D3880 /* FormatStyle-LocalCurrency.swift */,
 			);
 			path = project7;
 			sourceTree = "<group>";
@@ -146,7 +143,6 @@
 				4198C26E29F819C200436212 /* ContentView.swift in Sources */,
 				4198C26C29F819C200436212 /* project7App.swift in Sources */,
 				4198C27A29F8218500436212 /* AddView.swift in Sources */,
-				41185BCA29FDC958004D3880 /* FormatStyle-LocalCurrency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

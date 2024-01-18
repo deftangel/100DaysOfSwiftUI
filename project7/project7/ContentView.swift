@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExpenseItem: Identifiable, Codable, Equatable {
+struct ExpenseItem: Identifiable, Codable {
     var id = UUID()
     let name: String
     let type: String
@@ -32,43 +32,28 @@ class Expenses: ObservableObject {
         }
         items = []
     }
-    
-    var personal: [ExpenseItem] {
-        return items.filter { $0.type == "Personal"}
-    }
-    
-    var busines: [ExpenseItem] {
-        return items.filter { $0.type == "Business"}
-    }
 }
 
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
-    
+
     var body: some View {
         NavigationView {
             List {
-                if expenses.personal.count > 0 {
-                    Section("Personal") {
-                        ForEach(expenses.personal) { item in
-                            ViewRow(item: item)
+                ForEach(expenses.items) { item in
+                    HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+
+                            Spacer()
+                            Text(item.amount, format: .currency(code: "USD"))
                         }
-                        .onDelete { indexSet in
-                            removeItems(at: indexSet, from: expenses.personal)
-                        }
-                    }
                 }
-                if expenses.busines.count > 0 {
-                    Section("Business") {
-                        ForEach(expenses.busines) { item in
-                            ViewRow(item: item)
-                        }
-                        .onDelete { indexSet in
-                            removeItems(at: indexSet, from: expenses.busines)
-                        }
-                    }
-                }
+                .onDelete(perform: removeItems)
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -84,18 +69,8 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet, from inputArray: [ExpenseItem]) {
-        
-        var offsetsToRemove = IndexSet()
-        
-        for deletedOffset in offsets {
-            let item = inputArray[deletedOffset]
-            if let index = expenses.items.firstIndex(of: item) {
-                offsetsToRemove.insert(index)
-            }
-        }
-        
-        expenses.items.remove(atOffsets: offsetsToRemove)
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 
@@ -103,45 +78,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-struct ViewRow: View {
-    let item: ExpenseItem
-    
-    var body: some View {
-        HStack {
-                VStack(alignment: .leading) {
-                    Text(item.name)
-                        .font(.headline)
-                }
-
-                Spacer()
-            Text(item.amount, format: .localCurrency)
-            }
-        .expenseDecoration(amount: item.amount)
-    }
-}
-
-extension View {
-    func expenseDecoration(amount: Double) -> some View {
-        modifier(ExpenseDecoration(amount: amount))
-    }
-}
-
-struct ExpenseDecoration: ViewModifier {
-    
-    let amount: Double
-    
-    func body(content: Content) -> some View {
-        if amount < 10.0 {
-            content
-                .foregroundColor(.gray)
-        } else if amount > 10.0 {
-            content
-                .foregroundColor(.red)
-        } else {
-            content
-                .foregroundColor(.black)
-        }
-  }
 }
