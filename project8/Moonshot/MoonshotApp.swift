@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct project8App: App {
+struct MoonshotApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

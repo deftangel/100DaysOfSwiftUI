@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/chunterb/Documents/GitHub/100DaysOfSwiftUI/project8/Moonshot.xcodeproj">
    </FileRef>
 </Workspace>
