@@ -22,14 +22,6 @@ class Order: Codable {
         case _zip = "zip"
     }
 
-    init() {
-        let defaults = UserDefaults.standard
-        name = defaults.string(forKey: "name") ?? ""
-        streetAddress = defaults.string(forKey: "streetAddress") ?? ""
-        city = defaults.string(forKey: "city") ?? ""
-        zip = defaults.string(forKey: "zip") ?? ""
-    }
-
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
 
     var type = 0
@@ -46,29 +38,16 @@ class Order: Codable {
     var extraFrosting = false
     var addSprinkles = false
 
-    var name: String {
-        didSet {
-            UserDefaults.standard.set(streetAddress, forKey: "name")
-        }
-    }
-    var streetAddress: String {
-        didSet {
-            UserDefaults.standard.set(streetAddress, forKey: "streetAddress")
-        }
-    }
-    var city: String {
-        didSet {
-            UserDefaults.standard.set(city, forKey: "city")
-        }
-    }
-    var zip: String {
-        didSet {
-            UserDefaults.standard.set(zip, forKey: "zip")
-        }
-    }
+    var name = ""
+    var streetAddress = ""
+    var city = ""
+    var zip = ""
 
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.trimmingCharacters(in: .whitespaces).isEmpty ||
+            streetAddress.trimmingCharacters(in: .whitespaces).isEmpty ||
+            city.trimmingCharacters(in: .whitespaces).isEmpty ||
+            zip.trimmingCharacters(in: .whitespaces).isEmpty {
             return false
         }
         return true
